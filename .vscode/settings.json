@@ -1,0 +1,12 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "vs-code-prettier-eslint.prettierLast": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "cSpell.autoFormatConfigFile": true,
+  "notebook.formatOnSave.enabled": true,
+  "files.autoSaveWhenNoErrors": true,
+  "files.autoSaveWorkspaceFilesOnly": true,
+  "github.copilot.nextEditSuggestions.enabled": true
+}
