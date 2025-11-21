@@ -52,12 +52,9 @@ exports.updateImage = async (req, res) => {
     const { description } = req.body;
     const url = "/uploads/" + filename;
 
-    console.log('req: ', url, req.body.filename)
-
     //when new image uploaded, delete old uploaded image
     if (req.file)
     {
-      console.log('old image has')
       const oldImage = await ImageModel.findById(id);
       if(!oldImage) 
         return res.status(400).json({ success: false, msg: "image not found" });
