@@ -8,5 +8,6 @@
   "notebook.formatOnSave.enabled": true,
   "files.autoSaveWhenNoErrors": true,
   "files.autoSaveWorkspaceFilesOnly": true,
-  "github.copilot.nextEditSuggestions.enabled": true
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "editor.fontSize": 15
 }

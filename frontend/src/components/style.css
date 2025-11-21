@@ -1,0 +1,88 @@
+.container {
+  padding: 60px 40px;
+}
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #333;
+  height: 50px;
+}
+.navbar a {
+  float: right;
+  font-size: 20px;
+  padding: 10px;
+  margin-right: 2rem;
+  color: white;
+}
+.navbar a:hover {
+  color: #ece2eac4;
+}
+.image-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: transform 0.3s ease; 
+  box-shadow: transform 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  /* overflow: hidden; */
+}
+.image-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: translateY(-4px);
+}
+.card-container {
+  padding: 10px;
+}
+.card-image {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+.btn-group {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+.btn-group button {
+  flex: 1;
+  background-color: #dce5f5;
+}
+.image-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin: 0 auto;
+}
+.create-card {
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+  max-width: 500px;
+  min-width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.upload-button {
+  width: 300px;
+  height: 250px;
+  border: 1px dotted gray;
+  margin: 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-input {
+  width: 100%; 
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-size: 15px; 
+}

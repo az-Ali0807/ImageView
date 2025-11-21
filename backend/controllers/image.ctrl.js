@@ -42,23 +42,28 @@ exports.createImage = async (req, res) => {
 }
 
 exports.updateImage = async (req, res) => {
-  if (!req.file) return res.status(400).json({ msg: "file is required" });
   if (!req.body.description) return res.status(400).json({ msg: "description is required" });
   if (typeof req.body.description !== 'string' ) 
     return res.status(400).json({ msg: "description must be string"});
 
   try {
-    const { filename } = req.file;
+    const { filename } = req.file || req.body;
     const { id } = req.params;
     const { description } = req.body;
     const url = "/uploads/" + filename;
 
-    //delete old uploaded image
-    const oldImage = await ImageModel.findById(id);
-    if(!oldImage) 
-      return res.status(400).json({ success: false, msg: "image not found" });
-    const full_url = path.join(uploadDir, oldImage.filename);
-    _deleteImage(full_url);
+    console.log('req: ', url, req.body.filename)
+
+    //when new image uploaded, delete old uploaded image
+    if (req.file)
+    {
+      console.log('old image has')
+      const oldImage = await ImageModel.findById(id);
+      if(!oldImage) 
+        return res.status(400).json({ success: false, msg: "image not found" });
+      const full_url = path.join(uploadDir, oldImage.filename);
+      _deleteImage(full_url);
+    }
 
     const updatedImage = await ImageModel.findByIdAndUpdate(id, {
       filename: filename,
@@ -69,7 +74,7 @@ exports.updateImage = async (req, res) => {
     }); 
     return res.status(200).json({ success: true, data: updatedImage });
   } catch (err) {
-    console.err("Image update failed: ", err);
+    console.error("Image update failed: ", err);
     return res.status(500).json({ success: false, msg: err.message });
   }
 }
@@ -84,7 +89,8 @@ exports.deleteImage = async (req, res) => {
     //delete old image
     const full_url = path.join(uploadDir, oldImage.filename);
     const deleted = _deleteImage(full_url);
-    if(!deleted) return res.status(400).json({ success: false, msg: "previous image not deleted" });
+    if (!deleted) return res.status(400).json({ success: false, msg: "previous image not deleted" });
+    await ImageModel.deleteOne({ _id: id });
     return res.status(200).json({ success: true, msg: "image deleted" });
     
   } catch (err) {
