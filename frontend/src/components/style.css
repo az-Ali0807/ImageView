@@ -21,8 +21,8 @@
   color: #ece2eac4;
 }
 .image-card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: transform 0.3s ease; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
   box-shadow: transform 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -31,7 +31,9 @@
   /* overflow: hidden; */
 }
 .image-card:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transform: translateY(-4px);
 }
 .card-container {
@@ -63,7 +65,9 @@
   margin-top: 30px;
   max-width: 500px;
   min-width: 500px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .upload-button {
   width: 300px;
@@ -76,13 +80,13 @@
   justify-content: center;
 }
 .card-input {
-  width: 100%; 
+  width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 4px; 
+  border-radius: 4px;
   box-sizing: border-box;
   margin-top: 20px;
   margin-bottom: 16px;
   resize: vertical;
-  font-size: 15px; 
+  font-size: 15px;
 }
